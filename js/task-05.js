@@ -5,7 +5,7 @@ console.log(inputRef.value)
 
 inputRef.addEventListener('input', onInput)
 function onInput(event) {
-    if (event.currentTarget.value != '') {
+    if (event.currentTarget.value !== '') {
         return nameRef.textContent = event.currentTarget.value
     }
     return nameRef.textContent = 'Anonymous'
