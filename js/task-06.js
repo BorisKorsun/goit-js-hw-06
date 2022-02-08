@@ -11,7 +11,7 @@ function onInputBlur(event) {
     this.classList.remove('valid')
     this.classList.add('invalid')
 
-    if (value == requiredValue) {
+    if (value === Number(requiredValue)) {
         this.classList.add('valid')
         this.classList.remove('invalid')
     }
