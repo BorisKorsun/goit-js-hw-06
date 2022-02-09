@@ -1,23 +1,29 @@
 const formRef = document.querySelector('.login-form')
-const inputsRef = document.querySelectorAll('.login-form input')
-console.log(inputsRef)
-
 
 // inputsRef.addEventListener('input', event => {
 //     console.log(event.currentTarget.value === '')
 // })
 
-formRef.addEventListener('submit', onFormSubmit)
+formRef.addEventListener('submit', onLoginFormSubmit)
 
-function onFormSubmit(event) {
+function onLoginFormSubmit(event) {
     event.preventDefault()
-    for (const input of inputsRef) {
-        if (input.value === '') {
-            alert('All the inputs have to be filled')
-        }
+    if (
+        event.currentTarget.elements.email.value === '' ||
+        event.currentTarget.elements.password.value ===''
+    ) {
+        alert('All the fields have to be filled')
+        return
     }
+    const dataFormResult = {};
     const formData = new FormData(event.currentTarget)
-    console.log(formData)
-    formRef.reset()
+    
+    formData.forEach((value, name) => {
+        dataFormResult[name] = value;
+    });
+
+    console.log(dataFormResult)
+    event.currentTarget.reset()
 }
+
 
