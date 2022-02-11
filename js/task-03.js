@@ -13,30 +13,10 @@ const images = [
   },
 ];
 
-const listRef = document.querySelector('.gallery')
+const galleryEl = document.querySelector(`ul`)
+const newImgInLi = images.map((image) => `<li><img class='gallery_img' src="${image.url}" alt="${image.alt}"></li>`).join("")
+galleryEl.insertAdjacentHTML("beforebegin", newImgInLi)
 
-const markup = images
-  .map(obj => {
-    return `<li><img class="gallery_img" src="${obj.url}" alt="${obj.alt}"></img></li>`
-  })
-  console.log(markup)
 
-listRef.insertAdjacentHTML('beforeend', markup)
 
-// const createImages = array => {
-//   return array.map(image => {
-//     const itemRef = document.createElement('li')
-//     const imageRef = document.createElement('img')
-//     imageRef.src = image.url
-//     imageRef.alt = image.alt
-//     imageRef.classList.add('gallery_img')
-//     itemRef.appendChild(imageRef)
-//     return itemRef
-//   })
-// }
-
-// const elements = createImages(images)
-
-// const listRef = document.querySelector('.gallery')
-// listRef.append(...elements)
 
