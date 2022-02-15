@@ -14,5 +14,5 @@ btnRef.addEventListener('click', onBtnClick)
 function onBtnClick(event) {
   const randomColor = getRandomHexColor()
   body.style.backgroundColor = randomColor
-  spanTextRef.textContent = getRandomHexColor()
+  spanTextRef.textContent = randomColor
 }
